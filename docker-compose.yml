@@ -1,0 +1,23 @@
+x-bag-source: &DATA_SOURCE "~/data"
+
+services:
+  ws:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ipc: host
+    tty: true
+    privileged: true
+    environment:
+      DISPLAY: $DISPLAY
+      TERM: screen-256color
+      KALIBR_MANUAL_FOCAL_LENGTH_INIT: 1
+    volumes:
+      - type: bind
+        source: /tmp/.X11-unix
+        target: /tmp/.X11-unix
+      - type: bind
+        source: *DATA_SOURCE
+        target: /home/user/data
+    working_dir: /home/user/ws
+    command: /bin/bash
