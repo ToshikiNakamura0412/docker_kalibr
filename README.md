@@ -37,10 +37,10 @@ e.g. Camera-IMU calibration
 ```bash
 rosrun kalibr kalibr_calibrate_imu_camera \
     --target ~/data/april_6x6.yaml \
-	--imu ~/data/imu_adis16448.yaml \
-	--imu-models calibrated \
-	--cam ~/data/cam_april-camchain.yaml \
-	--bag ~/data/imu_april.bag
+    --imu ~/data/imu_adis16448.yaml \
+    --imu-models calibrated \
+    --cam ~/data/cam_april-camchain.yaml \
+    --bag ~/data/imu_april.bag
 ```
 
 ### Stop
